@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131020200335) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "clients", force: true do |t|
     t.string   "name"
     t.string   "company"
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 20131020200335) do
     t.datetime "updated_at"
   end
 
-  add_index "contracts", ["job_id"], name: "index_contracts_on_job_id"
+  add_index "contracts", ["job_id"], name: "index_contracts_on_job_id", using: :btree
 
   create_table "estimates", force: true do |t|
     t.decimal  "amount"
@@ -38,7 +41,7 @@ ActiveRecord::Schema.define(version: 20131020200335) do
     t.datetime "updated_at"
   end
 
-  add_index "estimates", ["job_id"], name: "index_estimates_on_job_id"
+  add_index "estimates", ["job_id"], name: "index_estimates_on_job_id", using: :btree
 
   create_table "invoices", force: true do |t|
     t.decimal  "total"
@@ -48,7 +51,7 @@ ActiveRecord::Schema.define(version: 20131020200335) do
     t.datetime "updated_at"
   end
 
-  add_index "invoices", ["job_id"], name: "index_invoices_on_job_id"
+  add_index "invoices", ["job_id"], name: "index_invoices_on_job_id", using: :btree
 
   create_table "jobs", force: true do |t|
     t.string   "title"
@@ -64,13 +67,14 @@ ActiveRecord::Schema.define(version: 20131020200335) do
   end
 
   create_table "notes", force: true do |t|
-    t.text     "body"
+    t.string   "title"
+    t.text     "description"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "notes", ["user_id"], name: "index_notes_on_user_id"
+  add_index "notes", ["user_id"], name: "index_notes_on_user_id", using: :btree
 
   create_table "supplies", force: true do |t|
     t.string   "title"
@@ -87,6 +91,7 @@ ActiveRecord::Schema.define(version: 20131020200335) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "salt"
+    t.string   "encrypted_password"
   end
 
 end

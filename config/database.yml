@@ -1,9 +1,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: natos_development
+  database: natos
   pool: 5
-  password:
+  username: postgres
+  password: er256zer
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -11,6 +12,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: natos_test
+  database: natos
   pool: 5
-  password:
+  username: postgres
+  password: er256zer

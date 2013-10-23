@@ -1,0 +1,46 @@
+<%= render "shared/admin_topbar" %>
+
+<div class="sidebarOpen"><button><< Open</button></div>
+<div class="sidebar">
+	<button class="sidebarClose">Close >></button>
+  	<%= link_to 'Back', jobs_path %> | <%= link_to 'Edit', edit_job_path(@job) %>
+</div>
+
+<div class="content">
+	<p>
+	  <strong>Title:</strong>
+	  <%= @job.title %>
+	</p>
+	 
+	<p>
+	  <strong>Status:</strong>
+	  <%= @job.status %>
+	</p>
+
+	<p>
+	  <strong>Description:</strong>
+	  <%= @job.description %>
+	</p>
+
+	<div class="tool_table">
+	    <table>
+	      <tr>
+	        <th>#</th>
+	        <th>Name</th>
+	        <th>Email</th>
+	        <th>Phone</th>
+	        <th></th>
+	      </tr>
+	     
+	      <% @job.users.each do |user| %>
+	        <tr>
+	          <td class="center"><%= user.id %></td>
+	          <td><%= user.name %></td>
+	          <td><%= user.email %></td>
+	          <td><%= user.phone %></td>
+	          <td><%= link_to 'Show', user %></td>
+	        </tr>
+	      <% end %>
+	    </table>
+  	</div>
+</div>

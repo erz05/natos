@@ -1,0 +1,37 @@
+<%= render "shared/admin_topbar" %>
+
+<div class="sidebarOpen"><button><< Open</button></div>
+<div class="sidebar"> 
+  <button class="sidebarClose">Close >></button>
+  <%= link_to 'New Job', new_job_path %> 
+ 
+</div>
+
+<div class="content">
+  <h1>Listing jobs</h1>
+   
+  <div class="tool_table">
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Description</th>
+        <th></th>
+      </tr>
+     
+      <% @jobs.each do |job| %>
+        <tr>
+          <td class="center"><%= job.id %></td>
+          <td><%= job.title %></td>
+          <td><%= job.status %></td>
+          <td><%= job.description %></td>
+          <td><%= link_to 'Show', job %>
+            <%= link_to 'Edit', edit_job_path(job) %>
+            <%= link_to 'Destroy', job_path(job), method: :delete, data: {confirm: 'Are you sure?'} %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

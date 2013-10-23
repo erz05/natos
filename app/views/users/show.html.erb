@@ -1,0 +1,26 @@
+<%= render "shared/admin_topbar" %>
+
+<div class="content">
+	<p>
+	  <strong>Name:</strong>
+	  <%= @user.name %>
+	</p>
+	 
+	<p>
+	  <strong>Email:</strong>
+	  <%= @user.email %>
+	</p>
+
+	<p>
+	  <strong>Phone:</strong>
+	  <%= @user.phone %>
+	</p>
+
+	<h2>Notes</h2>
+	<%= render @user.notes %>
+
+	<h2>Add an Note:</h2>
+	<%= render "notes/form" %>
+
+	<%= link_to 'Back', users_path %> | <%= link_to 'Edit', edit_user_path(@user) %>
+</div>

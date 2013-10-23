@@ -1,0 +1,15 @@
+<p>
+  <strong>Title:</strong>
+  <%= note.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= note.description %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Note', [note.user, note],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

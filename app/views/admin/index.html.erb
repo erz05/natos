@@ -1,0 +1,25 @@
+<%= render "shared/admin_topbar" %>
+
+<div class="sidebarOpen"><button><< Open</button></div>
+<div class="sidebar"> 
+  <button class="sidebarClose">Close >></button> 
+</div>
+
+<div class="content">
+	<h1>Admin Page</h1>
+	<table  class="tool_table">
+		<tr>
+			<th>line</th>
+			<th>pie</th>
+			<th>column</th>
+			<th>bar</th>
+			<th>area</th>
+		</tr>
+	</table>
+	<div class="chart"></div>
+  	<%= line_chart Job.group("date(created_at)").count %>
+  	<%= pie_chart Job.group("date(created_at)").count %>
+  	<%= column_chart Job.group("date(created_at)").count %>
+  	<%= bar_chart Job.group("date(created_at)").count %>
+  	<%= area_chart Job.group("date(created_at)").count %>
+</div>

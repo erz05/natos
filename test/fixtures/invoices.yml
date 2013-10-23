@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  total: 9.99
+  description: MyText
+  job_id: 
+
+two:
+  total: 9.99
+  description: MyText
+  job_id: 

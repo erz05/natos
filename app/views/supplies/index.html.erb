@@ -1,0 +1,36 @@
+<%= render "shared/admin_topbar" %>
+
+<div class="sidebarOpen"><button><< Open</button></div>
+<div class="sidebar"> 
+  <button class="sidebarClose">Close >></button> 
+  <%= link_to 'New Supply', new_supply_path %> 
+</div>
+
+<div class="content">
+  <h1>Listing Supplies</h1>
+   
+  <div class="tool_table">
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Description</th>
+        <th></th>
+      </tr>
+
+      <% @supplies.each do |supply| %>
+        <tr>
+          <td class="center"><%= supply.id %></td>
+          <td><%= supply.title %></td>
+          <td><%= supply.quantity %></td>
+          <td><%= supply.description %></td>
+          <td><%= link_to 'Show', supply %>
+            <%= link_to 'Edit', edit_supply_path(supply) %>
+            <%= link_to 'Destroy', supply_path(supply), method: :delete, data: {confirm: 'Are you sure?'} %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

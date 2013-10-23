@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cms</title>
+	  	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  	<%= csrf_meta_tags %>
+	  	<div class="title">
+	  		<h1>Title</h1>
+			<div id="user_nav">
+				<% if current_user %>
+					Logged in as <%= current_user.name %>
+					<%= link_to "Log Out", log_out_path %>
+				<% else %>
+					<%= link_to "Log In", log_in_path %>
+				<% end %>
+			</div>
+	  	</div>
+	</head>
+	
+	<body>
+
+	<% flash.each do |name, msg| %>
+		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<% end %>
+
+	<%= yield %>
+
+	</body>
+
+	<footer>
+		<table>
+			<tr>
+				<td>Footer</td>
+			</tr>
+		</table>
+	</footer>
+
+</html>

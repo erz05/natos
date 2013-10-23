@@ -1,0 +1,176 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require fancybox
+ *= require_tree .
+ */
+
+html {
+    height: 100%;
+}
+
+head {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+}
+
+.title {
+	color: white;
+	margin: 0px;
+	padding: 10px;
+
+	background: -webkit-linear-gradient(top, #002E52, #2A72A9);
+	background: -moz-linear-gradient(top, #002E52, #2A72A9);
+	background: -ms-linear-gradient(top, #002E52, #2A72A9);
+	background: -o-linear-gradient(top, #002E52, #2A72A9);
+	background: linear-gradient(top, #002E52, #2A72A9);
+}
+
+hr {
+	margin: 0px;
+}
+
+.navigationBar {
+	background: -webkit-linear-gradient(#FFFFFF, #999999);
+	background: -moz-linear-gradient(#FFFFFF, #999999);
+	background: -ms-linear-gradient(#FFFFFF, #999999);
+	background: -o-linear-gradient(#FFFFFF, #999999);
+	background: linear-gradient(#FFFFFF, #999999);
+}
+
+.navigationBar td {
+	border-right: thin solid #555555;
+	padding: 10px;
+}
+
+.poop {
+	height: 100%;
+
+}
+
+.content {
+	padding: 20px;
+	background-color: #FFFFFF;
+
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.sidebar {
+	float: right;
+	color: white;
+	background: -webkit-linear-gradient(top, #002E52, #2A72A9);
+	background: -moz-linear-gradient(top, #002E52, #2A72A9);
+	background: -ms-linear-gradient(top, #002E52, #2A72A9);
+	background: -o-linear-gradient(top, #002E52, #2A72A9);
+	background: linear-gradient(top, #002E52, #2A72A9);
+	height: 100%;
+	width: 100px;
+	padding: 20px;
+}
+
+.sidebarOpen {
+	float: right;
+	padding: 5px;
+	padding-top: 20px;
+	background: white;
+	height: 100%;
+	display: none;
+}
+
+footer {
+	color: white;
+	padding: 10px;
+
+	background: -webkit-linear-gradient(top, #002E52, #2A72A9);
+	background: -moz-linear-gradient(top, #002E52, #2A72A9);
+	background: -ms-linear-gradient(top, #002E52, #2A72A9);
+	background: -o-linear-gradient(top, #002E52, #2A72A9);
+	background: linear-gradient(top, #002E52, #2A72A9);
+
+	position:fixed; 
+	bottom:0; 
+	width:100%;
+}
+
+#user_nav {
+	z-index: 10;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 20px;
+}
+
+#user_nav a:visited {
+	color: #FFFFFF;
+}
+
+.sidebar a:visited {
+	color: #FFFFFF;
+}
+
+.tool_table {
+	border:2px solid black;	
+}
+
+.tool_table table {
+	width: 100%;
+}
+
+.tool_table td
+{
+	border:1px solid black;
+	padding: 5px;
+}
+
+.tool_table th
+{
+	background: -webkit-linear-gradient(top, #002E52, #2A72A9);
+	background: -moz-linear-gradient(top, #002E52, #2A72A9);
+	background: -ms-linear-gradient(top, #002E52, #2A72A9);
+	background: -o-linear-gradient(top, #002E52, #2A72A9);
+	background: linear-gradient(top, #002E52, #2A72A9);
+	
+	color:white;
+	padding: 10px;
+}
+
+.center {
+	text-align: center;
+}
+
+@media print {
+  body {
+    background-color: #FFF;
+  }
+
+  #container {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  #line_items {
+    page-break-before: always;
+  }
+  
+  #pdf_link {
+    display: none;
+  }
+}

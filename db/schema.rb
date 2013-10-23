@@ -64,8 +64,7 @@ ActiveRecord::Schema.define(version: 20131020200335) do
   end
 
   create_table "notes", force: true do |t|
-    t.string   "title"
-    t.text     "description"
+    t.text     "body"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -87,8 +86,6 @@ ActiveRecord::Schema.define(version: 20131020200335) do
     t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "permission"
-    t.string   "encrypted_password"
     t.string   "salt"
   end
 

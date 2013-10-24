@@ -25,7 +25,7 @@
           <td class="center"><%= job.id %></td>
           <td><%= job.title %></td>
           <td><%= job.status %></td>
-          <td><%= job.users.first.name %></td>
+          <td><% if !job.users.empty? %><%= job.users.first.name %><% end %></td>
           <td><%= job.description %></td>
           <td><%= link_to 'Show', job %>
             <%= link_to 'Edit', edit_job_path(job) %>

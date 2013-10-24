@@ -24,6 +24,8 @@
 
 	<p>
 		<strong>User:</strong>
-		<%= @job.users.first.name %>
+		<% if !@job.users.empty? %>
+			<%= @job.users.first.name %>
+		<% end %>
 	</p>
 </div>

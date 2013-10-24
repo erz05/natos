@@ -1,9 +1,9 @@
 <%= render "shared/admin_topbar" %>
 
-<div class="sidebarOpen"><button><< Open</button></div>
+<div class="sidebarOpen"><button class="sidebarButton"><< Open</button></div>
 <div class="sidebar"> 
-  <button class="sidebarClose">Close >></button>
-  <%= link_to 'Back', jobs_path %>
+  <button class="sidebarClose sidebarButton">Close >></button>
+  <%= link_to 'Back', jobs_path, :class => 'sidebarButton' %>
 </div>
 
 <div class="content">

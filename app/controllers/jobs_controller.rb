@@ -12,6 +12,7 @@ class JobsController < ApplicationController
 
 	def create
 		@job = Job.new(params[:job].permit(:title, :description, :status))
+		@job.users << current_user
 		if @job.save
 			redirect_to @job
 		else

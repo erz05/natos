@@ -93,6 +93,12 @@ hr {
 	display: none;
 }
 
+.sidebarButton {
+	padding: 5px;
+	margin: 5px;
+	font-weight: bold;
+}
+
 footer {
 	color: white;
 	padding: 10px;

@@ -26,11 +26,6 @@
   </p>
 
   <p>
-    <%= f.label :users %><br>
-    <%= f.collection_select :users, User.all, :id, :name, :prompt => "Select User" %>
-  </p>
-
-  <p>
     <%= f.submit %>
   </p>
 <% end %>

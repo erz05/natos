@@ -1,0 +1,30 @@
+<%= render "shared/admin_topbar" %>
+
+<div class="sidebarOpen"><button class="sidebarButton"><< Open</button></div>
+<div class="sidebar">
+	<button class="sidebarClose sidebarButton">Close >></button>
+  	<%= link_to 'Back', clients_path, :class => "sidebarButton" %> | <%= link_to 'Edit', edit_client_path(@client), :class => "sidebarButton" %>
+</div>
+
+<div class="content">
+	<p>
+	  <strong>Name:</strong>
+	  <%= @client.name %>
+	</p>
+	 
+	<p>
+	  <strong>Company:</strong>
+	  <%= @client.company %>
+	</p>
+
+	<p>
+	  <strong>Email:</strong>
+	  <%= @client.email %>
+	</p>
+
+	<p>
+	  <strong>Phone:</strong>
+	  <%= @client.phone %>
+	</p>
+
+</div>

@@ -1,0 +1,38 @@
+<%= render "shared/admin_topbar" %>
+
+<div class="sidebarOpen"><button class="sidebarButton"><< Open</button></div>
+<div class="sidebar"> 
+  <button class="sidebarClose sidebarButton">Close >></button>
+  <%= link_to 'New Client', new_client_path, :class => 'sidebarButton' %> 
+ 
+</div>
+
+<div class="content">
+  <h1>Listing Clients</h1>
+  <div class="tool_table">
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th></th>
+      </tr>
+     
+      <% @clients.each do |client| %>
+        <tr>
+          <td class="center"><%= client.id %></td>
+          <td><%= client.name %></td>
+          <td><%= client.company %></td>
+          <td><%= client.email %></td>
+          <td><%= client.phone %></td>
+          <td><%= link_to 'Show', client %>
+            <%= link_to 'Edit', edit_client_path(client) %>
+            <%= link_to 'Destroy', client_path(client), method: :delete, data: {confirm: 'Are you sure?'} %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -58,6 +58,10 @@ hr {
 	padding: 10px;
 }
 
+.navigationBar a.visited {
+	color: #000000;
+}
+
 .poop {
 	height: 100%;
 
